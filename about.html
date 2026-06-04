@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Alexana &amp; Co</title>
+  <meta name="description" content="Anthony Soumiatin runs a small marketing and technology shop in Branson, MO. He handles both sides: the tech a business runs on and the marketing that fills it." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* ============================================================
+       About page — scoped styles
+       ============================================================ */
+
+    /* hero with coin accent */
+    .about-hero {
+      max-width: var(--wrap);
+      margin: 0 auto;
+      padding: clamp(3rem, 7vw, 6rem) clamp(1.25rem, 4vw, 2.5rem) clamp(2.5rem, 5vw, 4rem);
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: clamp(2rem, 5vw, 4rem);
+      align-items: center;
+    }
+
+    .about-hero-text { min-width: 0; }
+
+    .about-hero-title {
+      font-size: clamp(2.6rem, 7vw, 5rem);
+      font-weight: 600;
+      line-height: 1.0;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-hero-sub {
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      font-weight: 500;
+      color: var(--ink-muted);
+      max-width: 42ch;
+    }
+
+    /* coin art cluster — reuses .coin, .sticker, .spark from styles.css */
+    .about-hero-art {
+      position: relative;
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .about-hero-art::before {
+      content: "";
+      position: absolute;
+      inset: 6% 4%;
+      background: radial-gradient(circle at 38% 40%, rgba(10, 186, 181, 0.18), transparent 60%),
+                  radial-gradient(circle at 68% 65%, rgba(255, 61, 156, 0.18), transparent 60%);
+      filter: blur(8px);
+      z-index: 0;
+    }
+
+    .about-coin-label {
+      position: absolute;
+      z-index: 2;
+      font-weight: 800;
+      font-size: 0.78rem;
+      padding: 0.4rem 0.75rem;
+      background: var(--paper-2);
+      border: 3px solid var(--ink);
+      border-radius: 12px;
+      box-shadow: var(--shadow-hard-sm);
+      white-space: nowrap;
+    }
+
+    .about-coin-label-kids {
+      bottom: 5%;
+      left: -2%;
+      background: #ffc900;
+      transform: rotate(-5deg);
+    }
+
+    .about-coin-label-sides {
+      top: 4%;
+      right: 0%;
+      background: var(--teal);
+      transform: rotate(4deg);
+    }
+
+    /* story band: readable prose, not too wide */
+    .about-prose {
+      max-width: 68ch;
+    }
+
+    .about-prose p {
+      font-size: 1.125rem;
+      color: var(--ink-muted);
+      line-height: 1.65;
+      margin-bottom: 1.4rem;
+    }
+
+    .about-prose p:last-child { margin-bottom: 0; }
+
+    /* two-card layout for "how we work" */
+    .about-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    /* name origin — centered callout */
+    .about-name-band {
+      padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1.25rem, 4vw, 2.5rem);
+      text-align: center;
+      background: var(--paper-2);
+      border-top: 2px solid var(--ink);
+      border-bottom: 2px solid var(--ink);
+    }
+
+    .about-name-hed {
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      font-weight: 600;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+    }
+
+    .about-name-body {
+      font-size: 1.15rem;
+      color: var(--ink-muted);
+      max-width: 46ch;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .about-name-accent {
+      display: inline-flex;
+      gap: 1rem;
+      align-items: center;
+      margin-top: 1.5rem;
+    }
+
+    .about-name-pill {
+      font-weight: 800;
+      font-size: 1rem;
+      padding: 0.5rem 1.1rem;
+      border: 3px solid var(--ink);
+      border-radius: 999px;
+      box-shadow: var(--shadow-hard-sm);
+    }
+
+    .about-name-pill-a { background: var(--teal); }
+    .about-name-pill-b { background: var(--pink); color: #fff; }
+
+    /* location strip */
+    .about-location-strip {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-top: 2rem;
+    }
+
+    .about-location-dot {
+      width: 12px;
+      height: 12px;
+      background: var(--teal);
+      border: 2px solid var(--ink);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ============================================================
+       Responsive
+       ============================================================ */
+    @media (max-width: 860px) {
+      .about-hero {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding-top: 2rem;
+      }
+
+      .about-hero-art {
+        min-height: 180px;
+        order: -1;
+      }
+
+      .about-hero-art .coin { width: 150px; }
+
+      .about-coin-label { display: none; }
+
+      .about-pair { grid-template-columns: 1fr; gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <header class="nav">
+    <a class="brand" href="index.html" aria-label="Alexana and Co home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48" width="36" height="36" role="img" aria-label="Alexana A mark">
+          <defs>
+            <clipPath id="sq"><rect x="0" y="0" width="48" height="48" rx="12" /></clipPath>
+          </defs>
+          <g clip-path="url(#sq)">
+            <rect x="0" y="0" width="24" height="48" fill="#0ABAB5" />
+            <rect x="24" y="0" width="24" height="48" fill="#ff3d9c" />
+            <rect x="22" y="0" width="4" height="48" fill="#000" />
+          </g>
+          <rect x="1.5" y="1.5" width="45" height="45" rx="11" fill="none" stroke="#000" stroke-width="3" />
+          <path d="M15 35 L24 13 L33 35 M18.4 27.5 H29.6" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </span>
+      <span class="brand-word">alexana</span>
+    </a>
+
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a href="what-i-do.html">What I do</a>
+      <a href="work.html">Work</a>
+      <a href="https://interactive-voicemail.pages.dev" target="_blank" rel="noopener">Interactive Voicemail</a>
+      <a href="about.html">About</a>
+    </nav>
+
+    <a class="btn btn-pill" href="contact.html">Start a conversation</a>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main id="top">
+
+    <!-- ===== HERO ===== -->
+    <div class="about-hero">
+      <div class="about-hero-text">
+        <p class="eyebrow">The shop</p>
+        <h1 class="about-hero-title">I sit in the rare middle:<br /><span class="ink-pink">tech and marketing.</span></h1>
+        <p class="about-hero-sub">A performer for most of my life, technical the whole time, now running a marketing and technology shop in the Midwest.</p>
+      </div>
+
+      <div class="about-hero-art" aria-hidden="true">
+        <div class="coin">
+          <svg viewBox="0 0 200 200" width="100%" height="100%">
+            <defs><clipPath id="coinc"><circle cx="100" cy="100" r="90" /></clipPath></defs>
+            <g clip-path="url(#coinc)">
+              <rect x="0" y="0" width="100" height="200" fill="#0ABAB5" />
+              <rect x="100" y="0" width="100" height="200" fill="#ff3d9c" />
+              <rect x="95" y="0" width="10" height="200" fill="#000" />
+            </g>
+            <circle cx="100" cy="100" r="90" fill="none" stroke="#000" stroke-width="7" />
+            <circle cx="72" cy="90" r="8" fill="#000" />
+            <circle cx="128" cy="90" r="8" fill="#000" />
+            <path d="M70 122 Q100 152 130 122" fill="none" stroke="#000" stroke-width="7" stroke-linecap="round" />
+          </svg>
+        </div>
+        <div class="about-coin-label about-coin-label-sides">both sides</div>
+        <div class="about-coin-label about-coin-label-kids">Alexander + Anastasia</div>
+        <svg class="spark spark-1" viewBox="0 0 24 24"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="#0ABAB5" stroke="#000" stroke-width="1.5" stroke-linejoin="round" /></svg>
+        <svg class="spark spark-3" viewBox="0 0 24 24"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="#ff3d9c" stroke="#000" stroke-width="1.5" stroke-linejoin="round" /></svg>
+      </div>
+    </div>
+
+    <!-- ===== THE STORY ===== -->
+    <section class="band band-paper" id="story">
+      <div class="wrap">
+        <p class="eyebrow">How I got here</p>
+        <h2 class="band-title">The story.</h2>
+        <div class="about-prose">
+          <p>My dad ran a business, and growing up I did the work for it: proofreading, building funnels, running ads, putting together websites, even project-managing five-figure jobs for his clients. I learned the marketing side by doing it alongside a lot of freelancers, not from a course.</p>
+          <p>I'm technical first. I can design, and I've done plenty of it, but it isn't my strongest thing, so I usually bring in someone for it or keep it simple. What I'm good at is seeing how the pieces fit and making them work together.</p>
+          <p>Before this I spent most of my life as a performer: acrobatics, cyr wheel, stages and shows. A solo live act teaches you to control every variable you can and own the mistakes you can't hide. That habit followed me into the work.</p>
+          <p>Over the last year I went deep on the technical side and grew fast. My first real client was my friend Richard. I built him a website and an ebook, set up his GoHighLevel system, and ran some Meta ads. The clients kept coming: PT Signature Cabinetry, where I ran the ads and redesigned both of their sites, then Penner, owned by the same family. Alongside that I picked up GoHighLevel builds, automations, Zapier work, email setups, and A2P registration on Fiverr and Upwork.</p>
+          <p>Now I'm taking these tools to local businesses and people I know. I can scale to enterprise too, because I've done it. A lot of my clients come out of real estate, which helps me read how those folks think, though real estate isn't the focus.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== HOW WE WORK ===== -->
+    <section class="band" id="how-we-work">
+      <div class="wrap">
+        <p class="eyebrow">How we work</p>
+        <h2 class="band-title">You work directly with the person doing the work.</h2>
+        <p class="band-lede">Nobody hands you off to an account manager. The person on the call is the person building it. I keep the client list small on purpose, so each project gets real attention.</p>
+
+        <div class="about-pair">
+          <article class="card card-teal">
+            <span class="card-kicker">The shop</span>
+            <h3>Small enough to care, capable enough to scale.</h3>
+            <p>When a job needs a designer or another developer, I bring in someone vetted and manage them myself. That's why I say "we": it's me, Julie, and a bench of people I trust.</p>
+          </article>
+          <article class="card card-pink">
+            <span class="card-kicker">Julie</span>
+            <h3>Julie leads creative and brand.</h3>
+            <p>Branding, design direction, the way the work looks and feels — that's her. She catches things I miss before they reach a client, which is worth more than it sounds. She isn't a full-time production team, and I'd rather be straight about that than pretend we're bigger than we are.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== WHERE WE WORK ===== -->
+    <section class="band band-paper" id="location">
+      <div class="wrap">
+        <p class="eyebrow">Where I work</p>
+        <h2 class="band-title">Small town, on purpose.</h2>
+        <div class="about-prose">
+          <p>I'm in a small Missouri tourist town, and I understand small and seasonal businesses because I live among them. You get genuinely advanced technical work delivered with small-town honesty, which is a combination you don't see often.</p>
+          <p>I also speak Russian, native bilingual, which comes up more than you'd expect around here.</p>
+        </div>
+        <div class="about-location-strip">
+          <span class="about-location-dot"></span>
+          <span>Branson, MO</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== WHY ALEXANA (name origin) ===== -->
+    <div class="about-name-band" id="name">
+      <h2 class="about-name-hed">Why "Alexana"</h2>
+      <p class="about-name-body">It's named after my kids, Alexander and Anastasia. Family-first was the point from the start.</p>
+      <div class="about-name-accent" aria-hidden="true">
+        <span class="about-name-pill about-name-pill-a">Alexander</span>
+        <span style="font-size:1.5rem;font-weight:800;">+</span>
+        <span class="about-name-pill about-name-pill-b">Anastasia</span>
+      </div>
+    </div>
+
+    <!-- ===== FINAL CTA ===== -->
+    <section class="cta" id="contact">
+      <div class="cta-card">
+        <h2>If that's how you like to work, tell me what you need.</h2>
+        <p>Tell me what's going on in your business and what you've tried. I'll tell you honestly whether I can help, what I'd build, and what it costs.</p>
+        <a href="contact.html" class="btn btn-stack btn-stack-lg">
+          <span class="btn-stack-face">Start a conversation</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="foot">
+    <div class="foot-brand">
+      <span class="brand-mark brand-mark-sm" aria-hidden="true">
+        <svg viewBox="0 0 48 48" width="28" height="28">
+          <g clip-path="url(#sq)">
+            <rect x="0" y="0" width="24" height="48" fill="#0ABAB5" />
+            <rect x="24" y="0" width="24" height="48" fill="#ff3d9c" />
+            <rect x="22" y="0" width="4" height="48" fill="#000" />
+          </g>
+          <rect x="1.5" y="1.5" width="45" height="45" rx="11" fill="none" stroke="#000" stroke-width="3" />
+          <path d="M15 35 L24 13 L33 35 M18.4 27.5 H29.6" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </span>
+      <span class="brand-word">alexana &amp; co</span>
+    </div>
+    <p class="foot-line">A marketing and technology shop. Branson, MO.</p>
+    <p class="foot-copy">&copy; 2026 Alexana &amp; Co. Build smarter, market better.</p>
+  </footer>
+
+  <script>
+    (function () {
+      var t = document.getElementById("navToggle");
+      var l = document.getElementById("navLinks");
+      if (!t || !l) return;
+      t.addEventListener("click", function () {
+        var open = l.classList.toggle("is-open");
+        t.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+      l.querySelectorAll("a").forEach(function (a) {
+        a.addEventListener("click", function () {
+          l.classList.remove("is-open");
+          t.setAttribute("aria-expanded", "false");
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

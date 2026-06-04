@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Work | Alexana &amp; Co</title>
+  <meta name="description" content="Real projects, told as stories. What each business was stuck on, what we built, and where it is now." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* work-page scoped additions */
+    .work-hero {
+      max-width: var(--wrap);
+      margin: 0 auto;
+      padding: clamp(3rem, 7vw, 6rem) clamp(1.25rem, 4vw, 2.5rem) clamp(2rem, 4vw, 3.5rem);
+    }
+    .work-hero .band-title {
+      max-width: 18ch;
+    }
+    .work-hero .band-lede {
+      max-width: 54ch;
+      margin-bottom: 0;
+    }
+    .work-full-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width: 860px) {
+      .work-full-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <header class="nav">
+    <a class="brand" href="index.html" aria-label="Alexana and Co home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48" width="36" height="36" role="img" aria-label="Alexana A mark">
+          <defs>
+            <clipPath id="sq"><rect x="0" y="0" width="48" height="48" rx="12" /></clipPath>
+          </defs>
+          <g clip-path="url(#sq)">
+            <rect x="0" y="0" width="24" height="48" fill="#0ABAB5" />
+            <rect x="24" y="0" width="24" height="48" fill="#ff3d9c" />
+            <rect x="22" y="0" width="4" height="48" fill="#000" />
+          </g>
+          <rect x="1.5" y="1.5" width="45" height="45" rx="11" fill="none" stroke="#000" stroke-width="3" />
+          <path d="M15 35 L24 13 L33 35 M18.4 27.5 H29.6" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </span>
+      <span class="brand-word">alexana</span>
+    </a>
+
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a href="what-i-do.html">What I do</a>
+      <a href="work.html">Work</a>
+      <a href="https://interactive-voicemail.pages.dev" target="_blank" rel="noopener">Interactive Voicemail</a>
+      <a href="about.html">About</a>
+    </nav>
+
+    <a class="btn btn-pill" href="contact.html">Start a conversation</a>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main id="top">
+
+    <!-- ===== WORK HERO ===== -->
+    <div class="work-hero">
+      <p class="eyebrow">Selected work</p>
+      <h1 class="band-title">What I've built.</h1>
+      <p class="band-lede">These are real builds for real businesses. Each one is a story: what they were stuck on, what we built and the tools we used, and where things stand now. New ones get added as projects wrap.</p>
+    </div>
+
+    <!-- ===== WORK GRID ===== -->
+    <section class="band band-paper" id="work">
+      <div class="wrap">
+        <div class="work-grid work-full-grid">
+
+          <!-- 1: Penner Architectural (order 1) -->
+          <article class="work-card">
+            <span class="work-tag">Commercial Manufacturing</span>
+            <h3>No website, no analytics, no control over their own domains. We fixed all of it.</h3>
+            <p>Penner Architectural had national reach and zero digital presence. Eight weeks from kickoff to a live WordPress site with 12 product pages, a 927-line SEO package, LinkedIn marketing, and email infrastructure rebuilt from scratch.</p>
+            <span class="work-client">Penner Architectural</span>
+          </article>
+
+          <!-- 2: Phil Sexton / HomeSmart (order 2) -->
+          <article class="work-card">
+            <span class="work-tag">Real Estate</span>
+            <h3>Built a GHL system integrated with automations for Phoenix's largest brokerage. Designed for 10 agents. Architected for 1,000.</h3>
+            <p>HomeSmart is one of the largest brokerages in the country. Phil Sexton runs NEXT inside it, training agents on technology. He had GoHighLevel and one agent actually using it. I built the snapshot architecture, 13 workflows, 5 email templates, a compliance layer, and every piece of documentation to make it a real system.</p>
+            <span class="work-client">Phil Sexton / HomeSmart</span>
+          </article>
+
+          <!-- 3: Skyglow Drones (order 3) -->
+          <article class="work-card">
+            <span class="work-tag">B2B Entertainment</span>
+            <h3>Built a cold email machine that runs at 3x industry open rates. Zero system existed before day one.</h3>
+            <p>Skyglow Drones had 22 shows locked with Silver Dollar City and nowhere to go from there. I built the outbound infrastructure, the lead lists, the sequences, and the RFP playbook that turned a great company into a findable one.</p>
+            <span class="work-client">Skyglow Drones</span>
+          </article>
+
+          <!-- 4: Derek Myers / MaxOne (order 4) -->
+          <article class="work-card">
+            <span class="work-tag">Real Estate</span>
+            <h3>Built the landing page, connected it to EverWebinar, and routed everything back into GHL with automated follow-up and appointment booking based on interest level.</h3>
+            <p>Derek had a polished automated webinar and nothing behind it. I designed the landing page, automatically connected it to EverWebinar, and routed everything back into GoHighLevel with behavioral tracking, automated follow-up sequences, and appointment booking that fires based on what the lead actually did.</p>
+            <span class="work-client">Derek Myers / MaxOne Properties</span>
+          </article>
+
+          <!-- 5: Training Day / Strength 4:13 (order 5) -->
+          <article class="work-card">
+            <span class="work-tag">Faith-Based Fitness</span>
+            <h3>Built the entire digital infrastructure for a faith-based BJJ program. Website, member portal, 99 lessons, two e-books, and a business plan.</h3>
+            <p>Rick Koenig had an HBO special, a BJJ black belt, and no digital presence beyond a Wix site with placeholder testimonials and wrong pricing. I built the full stack: a public website, a member portal with 6 programs and 99 lessons, a 63-page PDF workbook, and the brand strategy to scale it.</p>
+            <span class="work-client">Training Day / Strength 4:13</span>
+          </article>
+
+          <!-- 6: PT Signature Cabinetry (order 6) -->
+          <article class="work-card">
+            <span class="work-tag">Custom Cabinetry</span>
+            <h3>72% of reported conversions were fake. I found that and fixed it.</h3>
+            <p>PT Signature came in with no ads, no tracking, and a vendor who owned their domains. I rebuilt everything: Google Ads, Meta Ads, GBP optimization, a full website overhaul, social media management, SEO, and real reporting that replaced fake conversion data with the truth.</p>
+            <span class="work-client">PT Signature Cabinetry</span>
+          </article>
+
+          <!-- 7: Matt Pool Service (order 7) -->
+          <article class="work-card">
+            <span class="work-tag">Home Services</span>
+            <h3>177 ad interactions. Zero tracked conversions. Here's what I found.</h3>
+            <p>A brand-new pool and hot tub repair company in southwest Missouri was running ads with no conversion tracking, no negative keywords, and location targeting that was showing ads nationwide. I rebuilt the account from the ground up and tripled the tracking accuracy, even if I still can't claim a single verified conversion.</p>
+            <span class="work-client">All About Pools &amp; Spas</span>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FINAL CTA ===== -->
+    <section class="cta" id="contact">
+      <div class="cta-card">
+        <h2>Tell me what you're working on.</h2>
+        <p>Tell me what's going on in your business and what you've tried. I'll tell you honestly whether I can help, what I'd build, and what it costs.</p>
+        <a href="contact.html" class="btn btn-stack btn-stack-lg">
+          <span class="btn-stack-face">Start a conversation</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="foot">
+    <div class="foot-brand">
+      <span class="brand-mark brand-mark-sm" aria-hidden="true">
+        <svg viewBox="0 0 48 48" width="28" height="28">
+          <g clip-path="url(#sq)">
+            <rect x="0" y="0" width="24" height="48" fill="#0ABAB5" />
+            <rect x="24" y="0" width="24" height="48" fill="#ff3d9c" />
+            <rect x="22" y="0" width="4" height="48" fill="#000" />
+          </g>
+          <rect x="1.5" y="1.5" width="45" height="45" rx="11" fill="none" stroke="#000" stroke-width="3" />
+          <path d="M15 35 L24 13 L33 35 M18.4 27.5 H29.6" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </span>
+      <span class="brand-word">alexana &amp; co</span>
+    </div>
+    <p class="foot-line">A marketing and technology shop. Branson, MO.</p>
+    <p class="foot-copy">&copy; 2026 Alexana &amp; Co. Build smarter, market better.</p>
+  </footer>
+
+  <script>
+    (function () {
+      var t = document.getElementById("navToggle");
+      var l = document.getElementById("navLinks");
+      if (!t || !l) return;
+      t.addEventListener("click", function () {
+        var open = l.classList.toggle("is-open");
+        t.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+      l.querySelectorAll("a").forEach(function (a) {
+        a.addEventListener("click", function () {
+          l.classList.remove("is-open");
+          t.setAttribute("aria-expanded", "false");
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

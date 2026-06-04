@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Alexana &amp; Co</title>
+  <meta name="description" content="Tell me what you need. I'll tell you if I can help. Reach Anthony directly by email or the contact form. Based in Branson, MO, working with clients nationally." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ============================================================
+       Contact page — scoped styles
+       Shared classes (eyebrow, band, wrap, card, btn-stack, etc.)
+       are in styles.css and are NOT redefined here.
+       ============================================================ */
+
+    /* ---------- form layout ---------- */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    /* ---------- form fields ---------- */
+    .contact-label {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      margin-bottom: 0.5rem;
+      color: var(--ink);
+    }
+
+    .contact-input,
+    .contact-textarea {
+      display: block;
+      width: 100%;
+      background: var(--paper-2);
+      border: 3px solid var(--ink);
+      border-radius: 14px;
+      padding: 0.85rem 1.1rem;
+      font-family: "Hanken Grotesk", system-ui, sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--ink);
+      outline: none;
+      transition: box-shadow 0.15s var(--ease), transform 0.15s var(--ease);
+      appearance: none;
+    }
+
+    .contact-input::placeholder,
+    .contact-textarea::placeholder {
+      color: #aaa9a5;
+      font-weight: 400;
+    }
+
+    .contact-input:focus,
+    .contact-textarea:focus {
+      box-shadow: 4px 4px 0 #0ABAB5;
+      transform: translate(-1px, -1px);
+    }
+
+    .contact-textarea {
+      resize: vertical;
+      min-height: 140px;
+    }
+
+    /* ---------- field groups ---------- */
+    .contact-field {
+      margin-bottom: 1.5rem;
+    }
+
+    /* ---------- no-ghosting callout ---------- */
+    .contact-promise {
+      background: #e9faf9;
+      border: 3px solid var(--ink);
+      border-radius: 20px;
+      padding: 1.75rem 2rem;
+      box-shadow: var(--shadow-hard);
+      margin-bottom: 2.5rem;
+    }
+
+    .contact-promise-kicker {
+      display: inline-block;
+      font-weight: 800;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      padding: 0.25rem 0.6rem;
+      background: var(--teal);
+      border: 2px solid var(--ink);
+      border-radius: 999px;
+      margin-bottom: 0.9rem;
+    }
+
+    .contact-promise h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-promise p {
+      font-size: 0.95rem;
+      color: var(--ink-muted);
+    }
+
+    /* ---------- sidebar info ---------- */
+    .contact-sidebar {
+      position: sticky;
+      top: 6rem;
+    }
+
+    .contact-sidebar-heading {
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .contact-sidebar-body {
+      font-size: 1rem;
+      color: var(--ink-muted);
+      margin-bottom: 1.75rem;
+      max-width: 38ch;
+    }
+
+    .contact-email-link {
+      display: inline-block;
+      font-weight: 800;
+      font-size: 1.05rem;
+      color: var(--ink);
+      border-bottom: 3px solid var(--teal);
+      padding-bottom: 2px;
+      transition: color 0.15s var(--ease), border-color 0.15s var(--ease);
+    }
+    .contact-email-link:hover {
+      color: var(--teal-deep);
+    }
+
+    /* ---------- what happens next ---------- */
+    .contact-next-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .contact-next-list li {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      padding: 1.1rem 0;
+      border-bottom: 2px solid var(--ink);
+    }
+    .contact-next-list li:first-child {
+      border-top: 2px solid var(--ink);
+    }
+    .contact-next-num {
+      flex-shrink: 0;
+      width: 2rem;
+      height: 2rem;
+      background: var(--ink);
+      color: var(--paper-2);
+      font-weight: 800;
+      font-size: 0.85rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 0.1rem;
+    }
+    .contact-next-list li:nth-child(even) .contact-next-num {
+      background: var(--teal);
+      color: var(--ink);
+    }
+    .contact-next-text strong {
+      display: block;
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 0.2rem;
+    }
+    .contact-next-text span {
+      font-size: 0.9rem;
+      color: var(--ink-muted);
+    }
+
+    /* ---------- booking placeholder ---------- */
+    .contact-booking {
+      background: var(--paper-2);
+      border: 3px solid var(--ink);
+      border-radius: 20px;
+      box-shadow: var(--shadow-hard);
+      overflow: hidden;
+    }
+    .contact-booking-inner {
+      padding: 3rem 2.5rem;
+      text-align: center;
+      border: 3px dashed #ccc;
+      border-radius: 16px;
+      margin: 1.5rem;
+      color: var(--ink-muted);
+    }
+    .contact-booking-inner p {
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+    }
+
+    /* ---------- prototype note ---------- */
+    .contact-proto-note {
+      font-size: 0.8rem;
+      color: var(--ink-muted);
+      margin-top: 0.75rem;
+    }
+
+    /* ---------- responsive ---------- */
+    @media (max-width: 860px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .contact-sidebar {
+        position: static;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <header class="nav">
+    <a class="brand" href="index.html" aria-label="Alexana and Co home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48" width="36" height="36" role="img" aria-label="Alexana A mark">
+          <defs>
+            <clipPath id="sq"><rect x="0" y="0" width="48" height="48" rx="12" /></clipPath>
+          </defs>
+          <g clip-path="url(#sq)">
+            <rect x="0" y="0" width="24" height="48" fill="#0ABAB5" />
+            <rect x="24" y="0" width="24" height="48" fill="#ff3d9c" />
+            <rect x="22" y="0" width="4" height="48" fill="#000" />
+          </g>
+          <rect x="1.5" y="1.5" width="45" height="45" rx="11" fill="none" stroke="#000" stroke-width="3" />
+          <path d="M15 35 L24 13 L33 35 M18.4 27.5 H29.6" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </span>
+      <span class="brand-word">alexana</span>
+    </a>
+
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a href="what-i-do.html">What I do</a>
+      <a href="work.html">Work</a>
+      <a href="https://interactive-voicemail.pages.dev" target="_blank" rel="noopener">Interactive Voicemail</a>
+      <a href="about.html">About</a>
+    </nav>
+
+    <a class="btn btn-pill" href="contact.html">Start a conversation</a>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main id="top">
+
+    <!-- ===== HERO ===== -->
+    <section class="band">
+      <div class="wrap">
+        <p class="eyebrow">Contact</p>
+        <h1 class="band-title">Tell me what you're<br />working on.</h1>
+        <p class="band-lede">I'll tell you honestly if I can help. No intake gauntlet, just a direct line to the person who does the work.</p>
+      </div>
+    </section>
+
+    <!-- ===== FORM + SIDEBAR ===== -->
+    <section class="band band-paper" id="form">
+      <div class="wrap">
+        <div class="contact-grid">
+
+          <!-- Form column -->
+          <div>
+            <div class="contact-promise">
+              <span class="contact-promise-kicker">The promise</span>
+              <h3>No ghosting, no generic "we'll be in touch."</h3>
+              <p>I read every message. If there's a fit, I'll ask a few follow-up questions and come back with a plan and a price. If it's not a fit, I'll tell you that too.</p>
+            </div>
+
+            <form action="#" method="POST" novalidate>
+              <div class="contact-field">
+                <label class="contact-label" for="name">Name</label>
+                <input
+                  class="contact-input"
+                  type="text"
+                  id="name"
+                  name="name"
+                  autocomplete="name"
+                  required
+                  placeholder="Your name"
+                />
+              </div>
+
+              <div class="contact-field">
+                <label class="contact-label" for="email">Email</label>
+                <input
+                  class="contact-input"
+                  type="email"
+                  id="email"
+                  name="email"
+                  autocomplete="email"
+                  required
+                  placeholder="you@yourbusiness.com"
+                />
+              </div>
+
+              <div class="contact-field">
+                <label class="contact-label" for="message">What are you working on?</label>
+                <textarea
+                  class="contact-textarea"
+                  id="message"
+                  name="message"
+                  required
+                  placeholder="A few sentences is plenty. What's the problem and what have you tried?"
+                ></textarea>
+              </div>
+
+              <a href="#" class="btn btn-stack" role="button" onclick="return false;">
+                <span class="btn-stack-face">Send it</span>
+              </a>
+              <p class="contact-proto-note">This is a prototype form. No submissions are sent.</p>
+            </form>
+          </div>
+
+          <!-- Sidebar column -->
+          <aside class="contact-sidebar">
+            <p class="eyebrow">Or just email</p>
+            <p class="contact-sidebar-heading">Reach me directly.</p>
+            <p class="contact-sidebar-body">Skip the form if you prefer. Tell me a little about your business and what you're trying to get done. I'll respond within one business day, usually faster.</p>
+            <a class="contact-email-link" href="mailto:anthony@alexana.co">anthony@alexana.co</a>
+
+            <hr style="border: none; border-top: 2px solid var(--ink); margin: 2.5rem 0;" />
+
+            <p class="eyebrow">After you reach out</p>
+            <p class="contact-sidebar-heading" style="margin-bottom: 1.5rem;">What happens next</p>
+            <ol class="contact-next-list">
+              <li>
+                <span class="contact-next-num">1</span>
+                <div class="contact-next-text">
+                  <strong>I read your message.</strong>
+                  <span>Usually within a few hours, always within one business day.</span>
+                </div>
+              </li>
+              <li>
+                <span class="contact-next-num">2</span>
+                <div class="contact-next-text">
+                  <strong>A few follow-up questions.</strong>
+                  <span>About your business, your goals, and what's already in place.</span>
+                </div>
+              </li>
+              <li>
+                <span class="contact-next-num">3</span>
+                <div class="contact-next-text">
+                  <strong>A plan and a price.</strong>
+                  <span>Specific to your situation. No boilerplate proposals.</span>
+                </div>
+              </li>
+            </ol>
+
+            <p style="font-size: 0.9rem; color: var(--ink-muted); margin-top: 1.5rem;">
+              Based in Branson, MO. Working with clients across the country. Most work happens over Zoom or phone.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BOOK A CALL ===== -->
+    <section class="band" id="book">
+      <div class="wrap">
+        <p class="eyebrow">Book a call</p>
+        <h2 class="band-title">Pick a time that works.</h2>
+        <p class="band-lede" style="margin-bottom: 2rem;">Prefer to talk it through first? Grab a slot on my calendar.</p>
+
+        <div class="contact-booking">
+          <div class="contact-booking-inner">
+            <span style="font-size: 2rem;" aria-hidden="true">&#128197;</span>
+            <p><strong>Calendar embed goes here.</strong></p>
+            <p>GHL booking widget placeholder. Replace with the actual embed code.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FINAL CTA ===== -->
+    <section class="cta">
+      <div class="cta-card">
+        <h2>You don't need to have your marketing figured out before reaching out.</h2>
+        <p>Tell me what's going on and what you've tried. That's enough to start.</p>
+        <a href="#form" class="btn btn-stack btn-stack-lg">
+          <span class="btn-stack-face">Start a conversation</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="foot">
+    <div class="foot-brand">
+      <span class="brand-mark brand-mark-sm" aria-hidden="true">
+        <svg viewBox="0 0 48 48" width="28" height="28">
+          <g clip-path="url(#sq)">
+            <rect x="0" y="0" width="24" height="48" fill="#0ABAB5" />
+            <rect x="24" y="0" width="24" height="48" fill="#ff3d9c" />
+            <rect x="22" y="0" width="4" height="48" fill="#000" />
+          </g>
+          <rect x="1.5" y="1.5" width="45" height="45" rx="11" fill="none" stroke="#000" stroke-width="3" />
+          <path d="M15 35 L24 13 L33 35 M18.4 27.5 H29.6" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </span>
+      <span class="brand-word">alexana &amp; co</span>
+    </div>
+    <p class="foot-line">A marketing and technology shop. Branson, MO.</p>
+    <p class="foot-copy">&copy; 2026 Alexana &amp; Co. Build smarter, market better.</p>
+  </footer>
+
+  <script>
+    (function () {
+      var t = document.getElementById("navToggle");
+      var l = document.getElementById("navLinks");
+      if (!t || !l) return;
+      t.addEventListener("click", function () {
+        var open = l.classList.toggle("is-open");
+        t.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+      l.querySelectorAll("a").forEach(function (a) {
+        a.addEventListener("click", function () {
+          l.classList.remove("is-open");
+          t.setAttribute("aria-expanded", "false");
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

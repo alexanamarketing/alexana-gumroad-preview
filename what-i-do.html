@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What I Do | Alexana &amp; Co</title>
+  <meta name="description" content="Two halves of one coin: the tech your business runs on and the marketing that fills it. CRM, automation, AI, and websites, plus ads, SEO, funnels, and copy." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* ============================================================
+       what-i-do.html scoped styles — prefix: wid-
+       ============================================================ */
+
+    /* Hero: centered, full-bleed paper */
+    .wid-hero {
+      padding: clamp(3.5rem, 8vw, 6.5rem) clamp(1.25rem, 4vw, 2.5rem) clamp(2.5rem, 5vw, 4rem);
+      text-align: center;
+      border-bottom: 2px solid var(--ink);
+    }
+    .wid-hero .band-title {
+      font-size: clamp(2.6rem, 7vw, 5rem);
+      max-width: 22ch;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .wid-hero .band-lede {
+      max-width: 54ch;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Two expanded service cards */
+    .wid-halves {
+      padding: clamp(2.75rem, 6vw, 5.5rem) clamp(1.25rem, 4vw, 2.5rem);
+    }
+    .wid-card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.75rem;
+      margin-bottom: 2.25rem;
+    }
+    .wid-service-list {
+      list-style: none;
+      margin-top: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .wid-service-list li {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--ink-muted);
+      padding-left: 1.1rem;
+      position: relative;
+    }
+    .wid-service-list li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .card-teal .wid-service-list li::before { color: var(--teal-deep); }
+    .card-pink .wid-service-list li::before { color: var(--pink-text); }
+
+    .wid-no-menu {
+      font-size: 1.05rem;
+      color: var(--ink-muted);
+      max-width: 58ch;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    /* AI section: paper-2 band */
+    .wid-ai {
+      background: var(--paper-2);
+      border-top: 2px solid var(--ink);
+      border-bottom: 2px solid var(--ink);
+      padding: clamp(2.75rem, 6vw, 5.5rem) clamp(1.25rem, 4vw, 2.5rem);
+    }
+    .wid-ai-inner {
+      max-width: var(--wrap);
+      margin: 0 auto;
+    }
+    .wid-ai-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+    .wid-ai-copy p {
+      font-size: 1.1rem;
+      color: var(--ink-muted);
+      line-height: 1.65;
+      margin-bottom: 1.2rem;
+    }
+    .wid-ai-copy p:last-child { margin-bottom: 0; }
+    .wid-ai-aside {
+      background: var(--paper);
+      border: 3px solid var(--ink);
+      border-radius: var(--radius-card);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-hard);
+    }
+    .wid-ai-aside h3 {
+      font-size: 1rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+    }
+    .wid-examples {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .wid-examples li {
+      font-size: 0.95rem;
+      font-weight: 500;
+      padding: 0.6rem 0.8rem;
+      background: var(--paper-2);
+      border: 2px solid var(--ink);
+      border-radius: 12px;
+      box-shadow: 3px 3px 0 var(--ink);
+    }
+    .wid-examples li:nth-child(1) { border-left: 5px solid var(--teal); }
+    .wid-examples li:nth-child(2) { border-left: 5px solid var(--pink); }
+    .wid-examples li:nth-child(3) { border-left: 5px solid #ffc900; }
+
+    @media (max-width: 860px) {
+      .wid-card-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+      .wid-ai-body { grid-template-columns: 1fr; gap: 1.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <header class="nav">
+    <a class="brand" href="index.html" aria-label="Alexana and Co home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48" width="36" height="36" role="img" aria-label="Alexana A mark">
+          <defs>
+            <clipPath id="sq"><rect x="0" y="0" width="48" height="48" rx="12" /></clipPath>
+          </defs>
+          <g clip-path="url(#sq)">
+            <rect x="0" y="0" width="24" height="48" fill="#0ABAB5" />
+            <rect x="24" y="0" width="24" height="48" fill="#ff3d9c" />
+            <rect x="22" y="0" width="4" height="48" fill="#000" />
+          </g>
+          <rect x="1.5" y="1.5" width="45" height="45" rx="11" fill="none" stroke="#000" stroke-width="3" />
+          <path d="M15 35 L24 13 L33 35 M18.4 27.5 H29.6" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </span>
+      <span class="brand-word">alexana</span>
+    </a>
+
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a href="what-i-do.html">What I do</a>
+      <a href="work.html">Work</a>
+      <a href="https://interactive-voicemail.pages.dev" target="_blank" rel="noopener">Interactive Voicemail</a>
+      <a href="about.html">About</a>
+    </nav>
+
+    <a class="btn btn-pill" href="contact.html">Start a conversation</a>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main id="top">
+
+    <!-- ===== HERO ===== -->
+    <section class="wid-hero">
+      <p class="eyebrow">What I do</p>
+      <h1 class="band-title">I handle both sides: the <span class="ink-pink doodle-underline">tech and the marketing.</span></h1>
+      <p class="band-lede">Most shops do one or the other. I build the systems your business runs on, then run the marketing that makes them pay off. Because the same person holds both, the pieces actually connect.</p>
+    </section>
+
+    <!-- ===== THE TWO HALVES ===== -->
+    <section class="wid-halves band" id="halves">
+      <div class="wrap">
+        <p class="eyebrow">The two halves</p>
+        <h2 class="band-title">One coin, two sides.</h2>
+
+        <div class="wid-card-grid">
+          <!-- Tech card -->
+          <article class="card card-teal">
+            <span class="card-kicker">The tech</span>
+            <h3>What your business runs on.</h3>
+            <p>A CRM set up the way you actually work (GoHighLevel), automations that handle the busywork, AI that does real work, custom tools, and the website itself.</p>
+            <ul class="wid-service-list" aria-label="Tech services">
+              <li>CRM setup and architecture (GoHighLevel)</li>
+              <li>Workflow automation</li>
+              <li>AI voice and follow-up agents</li>
+              <li>Custom tools and integrations</li>
+              <li>Website design and build</li>
+            </ul>
+            <ul class="tag-strip" aria-label="Tech capabilities" style="margin-top: 1.5rem;">
+              <li>CRM</li>
+              <li>Automation</li>
+              <li>AI</li>
+              <li>Websites</li>
+              <li>GoHighLevel</li>
+            </ul>
+          </article>
+
+          <!-- Marketing card -->
+          <article class="card card-pink">
+            <span class="card-kicker">The marketing</span>
+            <h3>What fills those systems.</h3>
+            <p>Google and Meta ads, SEO, funnels, offers, and copy that sounds like a person wrote it.</p>
+            <ul class="wid-service-list" aria-label="Marketing services">
+              <li>Google Ads and Meta Ads</li>
+              <li>SEO and local search</li>
+              <li>Funnels and landing pages</li>
+              <li>Offer development</li>
+              <li>Copywriting</li>
+            </ul>
+            <ul class="tag-strip" aria-label="Marketing capabilities" style="margin-top: 1.5rem;">
+              <li>Ads</li>
+              <li>SEO</li>
+              <li>Funnels</li>
+              <li>Copy</li>
+              <li>Offers</li>
+            </ul>
+          </article>
+        </div>
+
+        <p class="wid-no-menu">None of this is a fixed menu. I look at the real problem in your business and build the solution it needs, whether that's one piece or the whole thing wired together.</p>
+      </div>
+    </section>
+
+    <!-- ===== AI SECTION ===== -->
+    <section class="wid-ai" id="ai">
+      <div class="wid-ai-inner">
+        <p class="eyebrow">AI, woven in</p>
+        <h2 class="band-title">AI that does real work.</h2>
+
+        <div class="wid-ai-body">
+          <div class="wid-ai-copy">
+            <p>The useful kind of AI is quiet: a voice agent that answers and qualifies a call while you're on a job, a follow-up sequence that adapts to how someone replied, a CRM that routes and prioritizes on its own.</p>
+            <p>I build it into the system rather than bolting it on, and I'd rather show you what it does than call it innovative.</p>
+          </div>
+
+          <div class="wid-ai-aside">
+            <h3>What that looks like</h3>
+            <ul class="wid-examples">
+              <li>Voice agent answers, qualifies, and logs a lead while you're on a job</li>
+              <li>Follow-up sequences that adapt based on how someone replied</li>
+              <li>CRM that routes and prioritizes contacts on its own</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FINAL CTA ===== -->
+    <section class="cta" id="contact">
+      <div class="cta-card">
+        <h2>Tell me what you're working on.</h2>
+        <p>Tell me what's going on in your business and what you've tried. I'll tell you honestly whether I can help and what I'd build.</p>
+        <a href="contact.html" class="btn btn-stack btn-stack-lg">
+          <span class="btn-stack-face">Start a conversation</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="foot">
+    <div class="foot-brand">
+      <span class="brand-mark brand-mark-sm" aria-hidden="true">
+        <svg viewBox="0 0 48 48" width="28" height="28">
+          <g clip-path="url(#sq)">
+            <rect x="0" y="0" width="24" height="48" fill="#0ABAB5" />
+            <rect x="24" y="0" width="24" height="48" fill="#ff3d9c" />
+            <rect x="22" y="0" width="4" height="48" fill="#000" />
+          </g>
+          <rect x="1.5" y="1.5" width="45" height="45" rx="11" fill="none" stroke="#000" stroke-width="3" />
+          <path d="M15 35 L24 13 L33 35 M18.4 27.5 H29.6" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </span>
+      <span class="brand-word">alexana &amp; co</span>
+    </div>
+    <p class="foot-line">A marketing and technology shop. Branson, MO.</p>
+    <p class="foot-copy">&copy; 2026 Alexana &amp; Co. Build smarter, market better.</p>
+  </footer>
+
+  <script>
+    (function () {
+      var t = document.getElementById("navToggle");
+      var l = document.getElementById("navLinks");
+      if (!t || !l) return;
+      t.addEventListener("click", function () {
+        var open = l.classList.toggle("is-open");
+        t.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+      l.querySelectorAll("a").forEach(function (a) {
+        a.addEventListener("click", function () {
+          l.classList.remove("is-open");
+          t.setAttribute("aria-expanded", "false");
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
