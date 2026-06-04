@@ -64,6 +64,12 @@
       transform: translate(-1px, -1px);
     }
 
+    .contact-input:focus-visible,
+    .contact-textarea:focus-visible {
+      outline: 3px solid #0ABAB5;
+      outline-offset: 2px;
+    }
+
     .contact-textarea {
       resize: vertical;
       min-height: 140px;
@@ -314,7 +320,12 @@
               </div>
 
               <div class="contact-field">
-                <label class="contact-label" for="message">What are you working on?</label>
+                <label class="contact-label" for="phone">Phone (optional)</label>
+                <input class="contact-input" type="tel" id="phone" name="phone" autocomplete="tel" placeholder="(555) 000-0000" />
+              </div>
+
+              <div class="contact-field">
+                <label class="contact-label" for="message">What do you need help with?</label>
                 <textarea
                   class="contact-textarea"
                   id="message"
@@ -324,9 +335,7 @@
                 ></textarea>
               </div>
 
-              <a href="#" class="btn btn-stack" role="button" onclick="return false;">
-                <span class="btn-stack-face">Send it</span>
-              </a>
+              <button type="submit" class="btn btn-stack"><span class="btn-stack-face">Send it</span></button>
               <p class="contact-proto-note">This is a prototype form. No submissions are sent.</p>
             </form>
           </div>
@@ -334,15 +343,15 @@
           <!-- Sidebar column -->
           <aside class="contact-sidebar">
             <p class="eyebrow">Or just email</p>
-            <p class="contact-sidebar-heading">Reach me directly.</p>
+            <h2 class="contact-sidebar-heading">Reach me directly.</h2>
             <p class="contact-sidebar-body">Skip the form if you prefer. Tell me a little about your business and what you're trying to get done. I'll respond within one business day, usually faster.</p>
             <a class="contact-email-link" href="mailto:anthony@alexana.co">anthony@alexana.co</a>
 
             <hr style="border: none; border-top: 2px solid var(--ink); margin: 2.5rem 0;" />
 
             <p class="eyebrow">After you reach out</p>
-            <p class="contact-sidebar-heading" style="margin-bottom: 1.5rem;">What happens next</p>
-            <ol class="contact-next-list">
+            <h2 class="contact-sidebar-heading" style="margin-bottom: 1.5rem;">What happens next</h2>
+            <ol class="contact-next-list" role="list">
               <li>
                 <span class="contact-next-num">1</span>
                 <div class="contact-next-text">
@@ -409,7 +418,8 @@
     <div class="foot-brand">
       <span class="brand-mark brand-mark-sm" aria-hidden="true">
         <svg viewBox="0 0 48 48" width="28" height="28">
-          <g clip-path="url(#sq)">
+          <defs><clipPath id="sq-foot"><rect x="0" y="0" width="48" height="48" rx="12" /></clipPath></defs>
+          <g clip-path="url(#sq-foot)">
             <rect x="0" y="0" width="24" height="48" fill="#0ABAB5" />
             <rect x="24" y="0" width="24" height="48" fill="#ff3d9c" />
             <rect x="22" y="0" width="4" height="48" fill="#000" />

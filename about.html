@@ -223,7 +223,7 @@
       <a href="what-i-do.html">What I do</a>
       <a href="work.html">Work</a>
       <a href="https://interactive-voicemail.pages.dev" target="_blank" rel="noopener">Interactive Voicemail</a>
-      <a href="about.html">About</a>
+      <a href="about.html" aria-current="page">About</a>
     </nav>
 
     <a class="btn btn-pill" href="contact.html">Start a conversation</a>
@@ -236,7 +236,7 @@
   <main id="top">
 
     <!-- ===== HERO ===== -->
-    <div class="about-hero">
+    <section class="about-hero">
       <div class="about-hero-text">
         <p class="eyebrow">The shop</p>
         <h1 class="about-hero-title">I sit in the rare middle:<br /><span class="ink-pink">tech and marketing.</span></h1>
@@ -263,13 +263,13 @@
         <svg class="spark spark-1" viewBox="0 0 24 24"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="#0ABAB5" stroke="#000" stroke-width="1.5" stroke-linejoin="round" /></svg>
         <svg class="spark spark-3" viewBox="0 0 24 24"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="#ff3d9c" stroke="#000" stroke-width="1.5" stroke-linejoin="round" /></svg>
       </div>
-    </div>
+    </section>
 
     <!-- ===== THE STORY ===== -->
     <section class="band band-paper" id="story">
       <div class="wrap">
-        <p class="eyebrow">How I got here</p>
-        <h2 class="band-title">The story.</h2>
+        <p class="eyebrow">The story</p>
+        <h2 class="band-title">How I got here.</h2>
         <div class="about-prose">
           <p>My dad ran a business, and growing up I did the work for it: proofreading, building funnels, running ads, putting together websites, even project-managing five-figure jobs for his clients. I learned the marketing side by doing it alongside a lot of freelancers, not from a course.</p>
           <p>I'm technical first. I can design, and I've done plenty of it, but it isn't my strongest thing, so I usually bring in someone for it or keep it simple. What I'm good at is seeing how the pieces fit and making them work together.</p>
@@ -285,7 +285,7 @@
       <div class="wrap">
         <p class="eyebrow">How we work</p>
         <h2 class="band-title">You work directly with the person doing the work.</h2>
-        <p class="band-lede">Nobody hands you off to an account manager. The person on the call is the person building it. I keep the client list small on purpose, so each project gets real attention.</p>
+        <p class="band-lede">Nobody hands you off to an account manager. The person on the call with you is the person building it. I keep the client list small on purpose, so each project gets real attention.</p>
 
         <div class="about-pair">
           <article class="card card-teal">
@@ -296,7 +296,7 @@
           <article class="card card-pink">
             <span class="card-kicker">Julie</span>
             <h3>Julie leads creative and brand.</h3>
-            <p>Branding, design direction, the way the work looks and feels — that's her. She catches things I miss before they reach a client, which is worth more than it sounds. She isn't a full-time production team, and I'd rather be straight about that than pretend we're bigger than we are.</p>
+            <p>Julie is my wife and my partner on creative and brand, and my sounding board on everything else. Branding, design direction, the way the work looks and feels — that's her. She catches things I miss before they reach a client, which is worth more than it sounds.</p>
           </article>
         </div>
       </div>
@@ -319,7 +319,7 @@
     </section>
 
     <!-- ===== WHY ALEXANA (name origin) ===== -->
-    <div class="about-name-band" id="name">
+    <section class="about-name-band" id="name">
       <h2 class="about-name-hed">Why "Alexana"</h2>
       <p class="about-name-body">It's named after my kids, Alexander and Anastasia. Family-first was the point from the start.</p>
       <div class="about-name-accent" aria-hidden="true">
@@ -327,7 +327,7 @@
         <span style="font-size:1.5rem;font-weight:800;">+</span>
         <span class="about-name-pill about-name-pill-b">Anastasia</span>
       </div>
-    </div>
+    </section>
 
     <!-- ===== FINAL CTA ===== -->
     <section class="cta" id="contact">
@@ -347,7 +347,8 @@
     <div class="foot-brand">
       <span class="brand-mark brand-mark-sm" aria-hidden="true">
         <svg viewBox="0 0 48 48" width="28" height="28">
-          <g clip-path="url(#sq)">
+          <defs><clipPath id="sq-foot"><rect x="0" y="0" width="48" height="48" rx="12" /></clipPath></defs>
+          <g clip-path="url(#sq-foot)">
             <rect x="0" y="0" width="24" height="48" fill="#0ABAB5" />
             <rect x="24" y="0" width="24" height="48" fill="#ff3d9c" />
             <rect x="22" y="0" width="4" height="48" fill="#000" />

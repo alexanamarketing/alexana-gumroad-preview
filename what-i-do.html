@@ -31,6 +31,7 @@
       max-width: 54ch;
       margin-left: auto;
       margin-right: auto;
+      margin-bottom: 0;
     }
 
     /* Two expanded service cards */
@@ -127,6 +128,7 @@
       border: 2px solid var(--ink);
       border-radius: 12px;
       box-shadow: 3px 3px 0 var(--ink);
+      word-break: break-word;
     }
     .wid-examples li:nth-child(1) { border-left: 5px solid var(--teal); }
     .wid-examples li:nth-child(2) { border-left: 5px solid var(--pink); }
@@ -161,7 +163,7 @@
     </a>
 
     <nav class="nav-links" id="navLinks" aria-label="Primary">
-      <a href="what-i-do.html">What I do</a>
+      <a href="what-i-do.html" aria-current="page">What I do</a>
       <a href="work.html">Work</a>
       <a href="https://interactive-voicemail.pages.dev" target="_blank" rel="noopener">Interactive Voicemail</a>
       <a href="about.html">About</a>
@@ -265,7 +267,7 @@
     <section class="cta" id="contact">
       <div class="cta-card">
         <h2>Tell me what you're working on.</h2>
-        <p>Tell me what's going on in your business and what you've tried. I'll tell you honestly whether I can help and what I'd build.</p>
+        <p>Tell me what's going on in your business and what you've tried. I'll tell you honestly whether I can help, what I'd build, and what it costs.</p>
         <a href="contact.html" class="btn btn-stack btn-stack-lg">
           <span class="btn-stack-face">Start a conversation</span>
         </a>
@@ -278,7 +280,8 @@
     <div class="foot-brand">
       <span class="brand-mark brand-mark-sm" aria-hidden="true">
         <svg viewBox="0 0 48 48" width="28" height="28">
-          <g clip-path="url(#sq)">
+          <defs><clipPath id="sq-foot"><rect x="0" y="0" width="48" height="48" rx="12" /></clipPath></defs>
+          <g clip-path="url(#sq-foot)">
             <rect x="0" y="0" width="24" height="48" fill="#0ABAB5" />
             <rect x="24" y="0" width="24" height="48" fill="#ff3d9c" />
             <rect x="22" y="0" width="4" height="48" fill="#000" />

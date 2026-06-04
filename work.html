@@ -14,7 +14,7 @@
     .work-hero {
       max-width: var(--wrap);
       margin: 0 auto;
-      padding: clamp(3rem, 7vw, 6rem) clamp(1.25rem, 4vw, 2.5rem) clamp(2rem, 4vw, 3.5rem);
+      padding: clamp(3rem, 7vw, 6rem) clamp(1.25rem, 4vw, 2.5rem) clamp(1rem, 2vw, 1.5rem);
     }
     .work-hero .band-title {
       max-width: 18ch;
@@ -22,9 +22,6 @@
     .work-hero .band-lede {
       max-width: 54ch;
       margin-bottom: 0;
-    }
-    .work-full-grid {
-      grid-template-columns: repeat(3, 1fr);
     }
     @media (max-width: 860px) {
       .work-full-grid {
@@ -57,7 +54,7 @@
 
     <nav class="nav-links" id="navLinks" aria-label="Primary">
       <a href="what-i-do.html">What I do</a>
-      <a href="work.html">Work</a>
+      <a href="work.html" aria-current="page">Work</a>
       <a href="https://interactive-voicemail.pages.dev" target="_blank" rel="noopener">Interactive Voicemail</a>
       <a href="about.html">About</a>
     </nav>
@@ -72,16 +69,17 @@
   <main id="top">
 
     <!-- ===== WORK HERO ===== -->
-    <div class="work-hero">
+    <section class="work-hero" aria-labelledby="work-hero-heading">
       <p class="eyebrow">Selected work</p>
-      <h1 class="band-title">What I've built.</h1>
+      <h1 class="band-title" id="work-hero-heading">What I've built.</h1>
       <p class="band-lede">These are real builds for real businesses. Each one is a story: what they were stuck on, what we built and the tools we used, and where things stand now. New ones get added as projects wrap.</p>
-    </div>
+    </section>
 
     <!-- ===== WORK GRID ===== -->
     <section class="band band-paper" id="work">
       <div class="wrap">
         <div class="work-grid work-full-grid">
+        <h2 class="sr-only">Case studies</h2>
 
           <!-- 1: Penner Architectural (order 1) -->
           <article class="work-card">
@@ -161,7 +159,8 @@
     <div class="foot-brand">
       <span class="brand-mark brand-mark-sm" aria-hidden="true">
         <svg viewBox="0 0 48 48" width="28" height="28">
-          <g clip-path="url(#sq)">
+          <defs><clipPath id="sq-foot"><rect x="0" y="0" width="48" height="48" rx="12" /></clipPath></defs>
+          <g clip-path="url(#sq-foot)">
             <rect x="0" y="0" width="24" height="48" fill="#0ABAB5" />
             <rect x="24" y="0" width="24" height="48" fill="#ff3d9c" />
             <rect x="22" y="0" width="4" height="48" fill="#000" />
