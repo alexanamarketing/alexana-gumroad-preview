@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alexana &amp; Co | A Marketing and Technology Shop</title>
+  <meta name="description" content="A small, family-run marketing and technology shop. We build the systems your business runs on and run the marketing that fills them." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <header class="nav">
+    <a class="brand" href="#top" aria-label="Alexana and Co home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48" width="36" height="36" role="img" aria-label="Alexana A mark">
+          <defs>
+            <clipPath id="sq"><rect x="0" y="0" width="48" height="48" rx="12" /></clipPath>
+          </defs>
+          <g clip-path="url(#sq)">
+            <rect x="0" y="0" width="24" height="48" fill="#0ABAB5" />
+            <rect x="24" y="0" width="24" height="48" fill="#ff3d9c" />
+            <rect x="22" y="0" width="4" height="48" fill="#000" />
+          </g>
+          <rect x="1.5" y="1.5" width="45" height="45" rx="11" fill="none" stroke="#000" stroke-width="3" />
+          <path d="M15 35 L24 13 L33 35 M18.4 27.5 H29.6" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </span>
+      <span class="brand-word">alexana</span>
+    </a>
+
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a href="#both">What I do</a>
+      <a href="#work">Work</a>
+      <a href="#iv">Interactive Voicemail</a>
+      <a href="#shop">About</a>
+    </nav>
+
+    <a class="btn btn-pill" href="#contact">Start a conversation</a>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main id="top">
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <p class="eyebrow">A marketing and technology shop</p>
+      <h1 class="hero-title">Build smarter,<br /><span class="ink-pink">market better.</span></h1>
+      <p class="hero-sub">We build the systems your business depends on, then run the marketing that fills them.</p>
+      <p class="hero-support">Enterprise-level work, small-town service.</p>
+
+      <div class="hero-actions">
+        <!-- The stacked two-tone primary button -->
+        <a href="#contact" class="btn btn-stack">
+          <span class="btn-stack-face">Tell me what you're working on</span>
+        </a>
+        <a href="#work" class="btn-ghost">See the work &rarr;</a>
+      </div>
+
+      <ul class="tag-strip" aria-label="What we handle">
+        <li>Ads</li>
+        <li>Websites</li>
+        <li>CRM</li>
+        <li>Automation</li>
+        <li>AI</li>
+        <li>SEO</li>
+        <li>Copy</li>
+      </ul>
+    </section>
+
+    <!-- ===== BOTH SIDES ===== -->
+    <section class="band" id="both">
+      <div class="wrap">
+        <p class="eyebrow">Both sides of the coin</p>
+        <h2 class="band-title">Tech and marketing,<br />under one roof.</h2>
+        <p class="band-lede">Most marketers can't build the systems, and the developers who can usually don't understand funnels, offers, or copy. I've built the CRM, run the ads, and written the funnel on the same project, so the pieces connect instead of fighting each other.</p>
+
+        <div class="duo">
+          <article class="card card-teal">
+            <span class="card-kicker">The tech</span>
+            <h3>The systems your business runs on.</h3>
+            <p>CRM, automation, AI, custom tools, and the website itself.</p>
+          </article>
+          <article class="card card-pink">
+            <span class="card-kicker">The marketing</span>
+            <h3>The work that fills those systems.</h3>
+            <p>Google and Meta ads, SEO, funnels, offers, and copy.</p>
+          </article>
+        </div>
+
+        <a href="#both" class="btn-ghost">See what I do &rarr;</a>
+      </div>
+    </section>
+
+    <!-- ===== SELECTED WORK ===== -->
+    <section class="band band-paper" id="work">
+      <div class="wrap">
+        <p class="eyebrow">Selected work</p>
+        <h2 class="band-title">A few of the builds.</h2>
+        <p class="band-lede">Each one is a story. What the business was stuck on, what we built, and where it is now.</p>
+
+        <div class="work-grid">
+          <article class="work-card">
+            <span class="work-tag">Commercial Manufacturing</span>
+            <h3>No website, no analytics, no control over their own domains. We fixed all of it.</h3>
+            <p>Penner Architectural had national reach and zero digital presence. Eight weeks from kickoff to a live site with 12 product pages, a 927-line SEO package, LinkedIn marketing, and email infrastructure rebuilt from scratch.</p>
+            <span class="work-client">Penner Architectural</span>
+          </article>
+
+          <article class="work-card">
+            <span class="work-tag">Real Estate</span>
+            <h3>A GHL system designed for 10 agents. Architected for 1,000.</h3>
+            <p>HomeSmart is one of the largest brokerages in the country. Phil had GoHighLevel and one agent actually using it. I built the snapshot architecture, 13 workflows, 5 email templates, a compliance layer, and every piece of documentation.</p>
+            <span class="work-client">Phil Sexton / HomeSmart</span>
+          </article>
+
+          <article class="work-card">
+            <span class="work-tag">B2B Entertainment</span>
+            <h3>A cold email machine that runs at 3x industry open rates.</h3>
+            <p>Skyglow Drones had 22 shows locked with Silver Dollar City and nowhere to go from there. I built the outbound infrastructure, the lead lists, the sequences, and the RFP playbook that turned a great company into a findable one.</p>
+            <span class="work-client">Skyglow Drones</span>
+          </article>
+        </div>
+
+        <a href="#work" class="btn-ghost">See all work &rarr;</a>
+      </div>
+    </section>
+
+    <!-- ===== INTERACTIVE VOICEMAIL (dark product band) ===== -->
+    <section class="band band-dark" id="iv">
+      <div class="wrap iv-wrap">
+        <div class="iv-copy">
+          <p class="eyebrow eyebrow-light">A product I built</p>
+          <h2 class="band-title">Interactive Voicemail</h2>
+          <p class="band-lede band-lede-light">An AI voice tool that picks up, qualifies, and follows up when you can't get to the phone. It's my own product, built on the same systems I set up for clients, and the one I'm pushing hardest right now.</p>
+          <a href="https://interactive-voicemail.pages.dev" target="_blank" rel="noopener" class="btn-ghost btn-ghost-light">See Interactive Voicemail &rarr;</a>
+        </div>
+
+        <!-- CSS phone demo -->
+        <div class="phone" aria-hidden="true">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="phone-status">
+              <span class="dot dot-teal"></span> Incoming call &middot; answered
+            </div>
+            <div class="bubble bubble-ai">Hi, you've reached Alexana. Anthony's on a job right now. Can I grab a few details so he can call you back?</div>
+            <div class="bubble bubble-them">Yeah, I need a website and someone to run my Google Ads.</div>
+            <div class="bubble bubble-ai">Got it. What's the best number and a good time to reach you?</div>
+            <div class="phone-foot">
+              <span class="pill-live"><span class="dot dot-pink"></span> Lead captured</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== THE SHOP ===== -->
+    <section class="band" id="shop">
+      <div class="wrap">
+        <p class="eyebrow">The shop</p>
+        <h2 class="band-title">A small shop in the Midwest.</h2>
+        <p class="band-lede">Alexana is named after my kids, Alexander and Anastasia. It's a family-run shop in a small Missouri tourist town. Julie leads creative and brand, and when a job needs an extra set of hands I bring in people I trust.</p>
+        <a href="#shop" class="btn-ghost">More about how we work &rarr;</a>
+      </div>
+    </section>
+
+    <!-- ===== FINAL CTA ===== -->
+    <section class="cta" id="contact">
+      <div class="cta-card">
+        <h2>Tell me what you're working on.</h2>
+        <p>Tell me what's going on in your business and what you've tried. I'll tell you honestly whether I can help, what I'd build, and what it costs.</p>
+        <a href="#contact" class="btn btn-stack btn-stack-lg">
+          <span class="btn-stack-face">Start a conversation</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="foot">
+    <div class="foot-brand">
+      <span class="brand-mark brand-mark-sm" aria-hidden="true">
+        <svg viewBox="0 0 48 48" width="28" height="28">
+          <g clip-path="url(#sq)">
+            <rect x="0" y="0" width="24" height="48" fill="#0ABAB5" />
+            <rect x="24" y="0" width="24" height="48" fill="#ff3d9c" />
+            <rect x="22" y="0" width="4" height="48" fill="#000" />
+          </g>
+          <rect x="1.5" y="1.5" width="45" height="45" rx="11" fill="none" stroke="#000" stroke-width="3" />
+          <path d="M15 35 L24 13 L33 35 M18.4 27.5 H29.6" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </span>
+      <span class="brand-word">alexana &amp; co</span>
+    </div>
+    <p class="foot-line">A marketing and technology shop. Branson, MO.</p>
+    <p class="foot-copy">&copy; 2026 Alexana &amp; Co. Build smarter, market better.</p>
+  </footer>
+
+  <script>
+    (function () {
+      var t = document.getElementById("navToggle");
+      var l = document.getElementById("navLinks");
+      if (!t || !l) return;
+      t.addEventListener("click", function () {
+        var open = l.classList.toggle("is-open");
+        t.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+      l.querySelectorAll("a").forEach(function (a) {
+        a.addEventListener("click", function () {
+          l.classList.remove("is-open");
+          t.setAttribute("aria-expanded", "false");
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
